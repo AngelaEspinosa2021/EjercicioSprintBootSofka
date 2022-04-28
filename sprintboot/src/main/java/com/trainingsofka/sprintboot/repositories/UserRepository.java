@@ -1,2 +1,4 @@
-package com.trainingsofka.sprintboot.repositories;public interface UserRepository {
+package com.trainingsofka.sprintboot.repositories;
+
+public interface UserRepository {
 }

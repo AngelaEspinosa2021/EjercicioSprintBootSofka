@@ -1,2 +1,4 @@
-package com.trainingsofka.sprintboot.controllers;public class UserController {
+package com.trainingsofka.sprintboot.controllers;
+
+public class UserController {
 }

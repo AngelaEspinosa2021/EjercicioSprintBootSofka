@@ -1,2 +1,4 @@
-package com.trainingsofka.sprintboot.services;public class UserService {
+package com.trainingsofka.sprintboot.services;
+
+public class UserService {
 }
