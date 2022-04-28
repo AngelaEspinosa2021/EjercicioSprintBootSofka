@@ -4,6 +4,8 @@ import com.trainingsofka.sprintboot.models.UserModel;
 import com.trainingsofka.sprintboot.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.Optional;
@@ -23,6 +25,10 @@ public class UserService {
 
     public Optional<UserModel> obtenerPorIdUsuario(Integer id_usuario){
         return userRepository.findById(id_usuario);
+    }
+
+    public UserModel editarUsuario(UserModel usuario){
+        return userRepository.save(usuario);
     }
 
     public ArrayList<UserModel>  obtenerPorPrioridad(Integer prioridad) {

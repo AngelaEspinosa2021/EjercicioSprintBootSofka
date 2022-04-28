@@ -29,15 +29,24 @@ public class UserRolController {
     }
 
     @GetMapping(path = "/{id_rol}")
-    public Optional<UserRolModel> obtenerListaRolesPorIdUsuario(@PathVariable("id_usuario") Integer id) {
+    public Optional<UserRolModel> obtenerListaRolesPorIdUsuario(@PathVariable("id_rol") Integer id) {
         return this.userRolService.obtenerPorIdUsuario(id);
     }
 
-    @GetMapping(path = "/{id_usuario}")
+    @GetMapping(path = "/{id_rol}")
     public Optional<UserRolModel> obtenerPorIdRol(@PathVariable("id_rol") Integer id) {
         return this.userRolService.obtenerPorIdRol(id);
     }
 
+    @PutMapping("/{id_rol}")
+    public void editarRol(@RequestBody UserRolModel rol, @PathVariable("id_rol") Integer id_rol)
+    {
+        userRolService.eliminarRol(id_rol);
+        userRolService.guardarRol(rol);
+
+    }
+
+    @GetMapping(path = "/{id_rol}")
     public boolean eliminarRol(Integer id_rol) {
         try{
             userRolService.eliminarRolesAsociadosalIdUsuario(id_rol);
@@ -47,6 +56,7 @@ public class UserRolController {
         }
     }
 
+    @GetMapping(path = "/{id_usuario}")
     public boolean eliminarRolesPorIdUsuario(Integer id_usuario) {
         try{
             userRolService.eliminarRolesAsociadosalIdUsuario(id_usuario);

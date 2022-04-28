@@ -35,6 +35,16 @@ public class UserController {
         return this.userService.obtenerPorPrioridad(prioridad);
     }
 
+
+    @PutMapping("/{id_usuario}")
+    public void editarUsuario(@RequestBody UserModel usuario, @PathVariable("id_usuario") Integer id)
+    {
+        userService.eliminarUsuario(id);
+        userService.guardarUsuario(usuario);
+
+    }
+
+
     @DeleteMapping(path = "/{id_usuario}")
     public String eliminarPorId(@PathVariable("id_usuario") Integer id) {
         boolean ok = this.userService.eliminarUsuario(id);

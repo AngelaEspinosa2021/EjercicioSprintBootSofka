@@ -31,6 +31,10 @@ public class UserRolService {
         return userRolRepository.findById(id_usuario);
     }
 
+    public UserRolModel editarRol(UserRolModel rol){
+        return userRolRepository.save(rol);
+    }
+
     public boolean eliminarRol(Integer id_rol) {
         try{
             userRolRepository.deleteById(id_rol);
