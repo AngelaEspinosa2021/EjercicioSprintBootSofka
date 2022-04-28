@@ -15,7 +15,7 @@ public class UserRolService {
     @Autowired
     UserRolRepository userRolRepository;
 
-    public ArrayList<UserRolModel> obtenerRoles(){
+    public ArrayList<UserRolModel> obtenerListaRoles(){
         return (ArrayList<UserRolModel>) userRolRepository.findAll();
     }
 
