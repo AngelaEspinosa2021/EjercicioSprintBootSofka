@@ -12,7 +12,7 @@ public class UserModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
 
-    private int id;
+    private Integer id_usuario;
     private String nombre;
     private String email;
     private Integer prioridad;
@@ -35,11 +35,11 @@ public class UserModel {
     }
 
     public int getId() {
-        return id;
+        return id_usuario;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(Integer id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public String getNombre() {
